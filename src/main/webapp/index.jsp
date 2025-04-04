@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+            background: linear-gradient(to right, #f3f9ff, #ffffff);
             color: #333;
             text-align: center;
             background-attachment: fixed;
@@ -30,8 +30,8 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .header img {
-            width: 130px;
-            height: 130px;
+            width: 250px;
+            height: auto;
         }
         .toggle-btn {
             cursor: pointer;
@@ -49,29 +49,30 @@
             gap: 30px;
         }
         .option {
-            width: 260px;
-            padding: 15px;
+            width: 320px;
+            padding: 0;
             background: white;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             border-radius: 20px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
         }
         .dark-mode .option {
             background: #444;
         }
         .option:hover {
             transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
-        .option img {
+        .option iframe {
             width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 12px;
+            height: 200px;
+            border: none;
         }
         .option p {
-            margin-top: 12px;
+            margin: 10px 0;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
         }
         .footer {
             position: fixed;
@@ -80,9 +81,6 @@
             color: white;
             font-style: italic;
             background: transparent;
-        }
-        .footer p {
-            font-style: italic;
         }
     </style>
 </head>
@@ -96,43 +94,43 @@
     <div class="options">
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.zomato.com/">
-                <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Explore Food Items">
+                <iframe src="https://www.youtube.com/embed/0QmMF_hL9v8?autoplay=1&mute=1&loop=1&playlist=0QmMF_hL9v8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <p>Explore Food Items</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.theverge.com/tech">
-                <img src="https://media.giphy.com/media/dsKnRuALlWsZG/giphy.gif" alt="Explore Tech">
+                <iframe src="https://www.youtube.com/embed/f1x9lgX8GaE?autoplay=1&mute=1&loop=1&playlist=f1x9lgX8GaE" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <p>Explore Tech</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bbc.com/news">
-                <img src="https://media.giphy.com/media/h3cEWrS0W1zvG/giphy.gif" alt="Explore Latest News">
+                <iframe src="https://www.youtube.com/embed/NLZRYQMLDW4?autoplay=1&mute=1&loop=1&playlist=NLZRYQMLDW4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <p>Explore Latest News</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.airbnb.com/">
-                <img src="https://media.giphy.com/media/RJW6nRzRL35vbTt0zG/giphy.gif" alt="Explore Service Apartments">
+                <iframe src="https://www.youtube.com/embed/qvH3x8jPbc4?autoplay=1&mute=1&loop=1&playlist=qvH3x8jPbc4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <p>Explore Service Apartments</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.crunchbase.com/">
-                <img src="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" alt="Explore Companies">
+                <iframe src="https://www.youtube.com/embed/W2OiS6vOe94?autoplay=1&mute=1&loop=1&playlist=W2OiS6vOe94" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <p>Explore Companies</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.makemytrip.com/">
-                <img src="https://media.giphy.com/media/xT9Igs90EPzE0RZZZq/giphy.gif" alt="Book Bus Tickets">
+                <iframe src="https://www.youtube.com/embed/ivvGZoS4LtQ?autoplay=1&mute=1&loop=1&playlist=ivvGZoS4LtQ" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <p>Book Bus Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bookmyshow.com/">
-                <img src="https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif" alt="Book Movie Tickets">
+                <iframe src="https://www.youtube.com/embed/YRt-QKmtaWk?autoplay=1&mute=1&loop=1&playlist=YRf-QKmtaWk" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 <p>Book Movie Tickets</p>
             </a>
         </div>
