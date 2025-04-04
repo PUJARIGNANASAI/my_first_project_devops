@@ -112,7 +112,7 @@
 </head>
 <body>
   <video class="bg-video" autoplay muted loop>
-    <source src="homepage.mp4" type="video/mp4" />
+    <source src="homepage2.mp4" type="video/mp4" />
   </video>
 
   <audio autoplay loop>
