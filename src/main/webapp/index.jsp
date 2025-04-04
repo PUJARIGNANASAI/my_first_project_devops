@@ -9,16 +9,20 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #f1f4f9, #d3dde7);
             color: #333;
             text-align: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
-        .dark-mode {
-            background-color: #121212;
-            color: white;
+        video.bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
         }
         .header {
             background: black;
@@ -30,20 +34,12 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .header img {
-            width: 100px;
+            width: 50px;
             height: auto;
         }
         .header h1 {
-            font-size: 24px;
+            font-size: 18px;
             margin: 0;
-        }
-        .toggle-btn {
-            cursor: pointer;
-            background: white;
-            color: #0072ff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
         }
         .options {
             display: flex;
@@ -53,22 +49,19 @@
             gap: 30px;
         }
         .option {
-            width: 320px;
-            background: white;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             border-radius: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
             position: relative;
         }
-        .dark-mode .option {
-            background: #444;
-        }
         .option:hover {
             transform: scale(1.08);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
-        .option video {
+        .option img {
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -80,14 +73,14 @@
             font-size: 18px;
             color: #000;
         }
-        .dark-mode .option p {
-            color: #fff;
-        }
         .footer {
             position: fixed;
             right: 20px;
             bottom: 10px;
             color: black;
+            font-style: normal;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
         }
         audio {
             display: none;
@@ -95,77 +88,65 @@
     </style>
 </head>
 <body>
+    <video class="bg-video" autoplay muted loop>
+        <source src="homepage.mp4" type="video/mp4">
+    </video>
+
     <audio autoplay loop>
         <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
     </audio>
+
     <div class="header">
         <img src="pgslogo.png" alt="PGS Logo">
         <h1>PGS Navigator</h1>
-        <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </div>
 
     <div class="options">
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.zomato.com/">
-                <video autoplay muted loop>
-                    <source src="https://videos.pexels.com/video-files/6758792/6758792-hd_1280_720_25fps.mp4" type="video/mp4">
-                </video>
+                <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/breakfast-2290161_1280.jpg" alt="Food">
                 <p>Explore Food Items</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.theverge.com/tech">
-                <video autoplay muted loop>
-                    <source src="https://videos.pexels.com/video-files/4976156/4976156-hd_1280_720_25fps.mp4" type="video/mp4">
-                </video>
+                <img src="https://cdn.pixabay.com/photo/2017/06/13/22/42/laptop-2408371_1280.jpg" alt="Tech">
                 <p>Explore Tech</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bbc.com/news">
-                <video autoplay muted loop>
-                    <source src="https://cdn.coverr.co/videos/coverr-news-coverage-5948/1080p.mp4" type="video/mp4">
-                </video>
+                <img src="https://cdn.pixabay.com/photo/2016/11/29/05/08/abstract-1868720_1280.jpg" alt="News">
                 <p>Explore Latest News</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.airbnb.com/">
-                <video autoplay muted loop>
-                    <source src="https://videos.pexels.com/video-files/2952862/2952862-hd_1280_720_25fps.mp4" type="video/mp4">
-                </video>
+                <img src="https://cdn.pixabay.com/photo/2017/08/06/11/22/living-room-2593570_1280.jpg" alt="Apartments">
                 <p>Explore Service Apartments</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.crunchbase.com/">
-                <video autoplay muted loop>
-                    <source src="https://cdn.coverr.co/videos/coverr-office-meeting-8759/1080p.mp4" type="video/mp4">
-                </video>
+                <img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg" alt="Companies">
                 <p>Explore Companies</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.redbus.in/">
-                <video autoplay muted loop>
-                    <source src="https://videos.pexels.com/video-files/5617710/5617710-hd_1280_720_25fps.mp4" type="video/mp4">
-                </video>
+                <img src="https://cdn.pixabay.com/photo/2016/02/16/20/40/bus-1208205_1280.jpg" alt="Bus">
                 <p>Book Bus Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bookmyshow.com/">
-                <video autoplay muted loop>
-                    <source src="https://cdn.coverr.co/videos/coverr-popcorn-theater-9582/1080p.mp4" type="video/mp4">
-                </video>
+                <img src="https://cdn.pixabay.com/photo/2016/11/22/23/51/cinema-1851090_1280.jpg" alt="Movies">
                 <p>Book Movie Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.flipkart.com/">
-                <video autoplay muted loop>
-                    <source src="https://cdn.coverr.co/videos/coverr-shopping-bags-9182/1080p.mp4" type="video/mp4">
-                </video>
+            <a href="https://www.amazon.in/">
+                <img src="https://cdn.pixabay.com/photo/2017/08/07/00/53/shopping-2594687_1280.jpg" alt="Shopping">
                 <p>Explore Shopping</p>
             </a>
         </div>
@@ -174,14 +155,5 @@
     <div class="footer">
         <p>Owner: Gnanasai Pujari</p>
     </div>
-
-    <script>
-        function toggleDarkMode() {
-            const body = document.body;
-            const btn = document.querySelector('.toggle-btn');
-            body.classList.toggle("dark-mode");
-            btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
-        }
-    </script>
 </body>
 </html>
