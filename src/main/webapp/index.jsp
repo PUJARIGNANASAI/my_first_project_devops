@@ -80,6 +80,9 @@
             font-size: 18px;
             color: #000;
         }
+        .dark-mode .option p {
+            color: #fff;
+        }
         .footer {
             position: fixed;
             right: 20px;
@@ -161,7 +164,7 @@
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.flipkart.com/">
                 <video autoplay muted loop>
-                    <source src="https://youtube.com/shorts/gAyNopgXMS4?si=FI7wdfHtVKIsoJ8y" type="video/mp4">
+                    <source src="https://cdn.coverr.co/videos/coverr-shopping-bags-9182/1080p.mp4" type="video/mp4">
                 </video>
                 <p>Explore Shopping</p>
             </a>
@@ -174,7 +177,10 @@
 
     <script>
         function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
+            const body = document.body;
+            const btn = document.querySelector('.toggle-btn');
+            body.classList.toggle("dark-mode");
+            btn.textContent = body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
         }
     </script>
 </body>
