@@ -161,7 +161,7 @@
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.flipkart.com/">
                 <video autoplay muted loop>
-                    <source src="https://cdn.coverr.co/videos/coverr-shopping-bags-9182/1080p.mp4" type="video/mp4">
+                    <source src="https://youtube.com/shorts/gAyNopgXMS4?si=FI7wdfHtVKIsoJ8y" type="video/mp4">
                 </video>
                 <p>Explore Shopping</p>
             </a>
