@@ -58,61 +58,72 @@
         .option:hover {
             transform: scale(1.07);
         }
-        .footer {
-            margin-top: 30px;
-            padding: 15px;
-            background: #333;
-            color: white;
-        }
         .option img {
             width: 100%;
             height: 150px;
             object-fit: cover;
             border-radius: 10px;
         }
+        .option p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: #333;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <img src="pgslogo.png" alt="PGS Logo">
-        <h1>PGS App</h1>
+        <h1>PGS Navigator</h1>
         <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </div>
-    
+
     <div class="options">
-        <div class="option animate__animated animate__pulse">
+        <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.zomato.com/">
-                <img src="https://media.giphy.com/media/f9k1tV7HyORcngKF8v/giphy.gif" alt="Explore Food Items">
+                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Explore Food Items">
+                <p>Explore Food Items</p>
             </a>
         </div>
-        <div class="option animate__animated animate__pulse">
+        <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.theverge.com/tech">
-                <img src="https://media.giphy.com/media/XI3NTy1I0U5LO/giphy.gif" alt="Explore Tech">
+                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Explore Tech">
+                <p>Explore Tech</p>
             </a>
         </div>
-        <div class="option animate__animated animate__pulse">
+        <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bbc.com/news">
-                <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Explore Latest News">
+                <img src="https://cdn-icons-png.flaticon.com/512/610/610118.png" alt="Explore Latest News">
+                <p>Explore Latest News</p>
             </a>
         </div>
-        <div class="option animate__animated animate__pulse">
+        <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.airbnb.com/">
-                <img src="https://media.giphy.com/media/26Ff6BS9EjhBv2d1u/giphy.gif" alt="Explore Service Apartments">
+                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Explore Service Apartments">
+                <p>Explore Service Apartments</p>
             </a>
         </div>
-        <div class="option animate__animated animate__pulse">
+        <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.crunchbase.com/">
-                <img src="https://media.giphy.com/media/3o7btNRTQDw8PNCz2s/giphy.gif" alt="Explore Companies">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Explore Companies">
+                <p>Explore Companies</p>
             </a>
         </div>
-        <div class="option animate__animated animate__pulse">
+        <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.makemytrip.com/">
-                <img src="https://media.giphy.com/media/xT0GqcV5M9O3LJnT7q/giphy.gif" alt="Book Bus Tickets">
+                <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Book Bus Tickets">
+                <p>Book Bus Tickets</p>
             </a>
         </div>
-        <div class="option animate__animated animate__pulse">
+        <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bookmyshow.com/">
-                <img src="https://media.giphy.com/media/l4FGwHEUCGILzM6BO/giphy.gif" alt="Book Movie Tickets">
+                <img src="https://cdn-icons-png.flaticon.com/512/3094/3094881.png" alt="Book Movie Tickets">
+                <p>Book Movie Tickets</p>
             </a>
         </div>
     </div>
