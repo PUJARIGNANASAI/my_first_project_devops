@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #f3f9ff, #ffffff);
+            background: linear-gradient(to right, #dfe9f3, #ffffff);
             color: #333;
             text-align: center;
             background-attachment: fixed;
@@ -30,7 +30,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .header img {
-            width: 250px;
+            width: 300px;
             height: auto;
         }
         .toggle-btn {
@@ -64,9 +64,10 @@
             transform: scale(1.08);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
-        .option iframe {
+        .option video {
             width: 100%;
             height: 200px;
+            object-fit: cover;
             border: none;
         }
         .option p {
@@ -94,43 +95,57 @@
     <div class="options">
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.zomato.com/">
-                <iframe src="https://www.youtube.com/embed/0QmMF_hL9v8?autoplay=1&mute=1&loop=1&playlist=0QmMF_hL9v8" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <video autoplay muted loop>
+                    <source src="https://player.vimeo.com/external/374873902.sd.mp4?s=9e41e66df193ab2473ed4e2e29b43064f26e5cc4&profile_id=164" type="video/mp4">
+                </video>
                 <p>Explore Food Items</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.theverge.com/tech">
-                <iframe src="https://www.youtube.com/embed/f1x9lgX8GaE?autoplay=1&mute=1&loop=1&playlist=f1x9lgX8GaE" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <video autoplay muted loop>
+                    <source src="https://player.vimeo.com/external/428084599.sd.mp4?s=38b191a3d46f10c0f31263fa6d3b70e859c9d9a5&profile_id=164" type="video/mp4">
+                </video>
                 <p>Explore Tech</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bbc.com/news">
-                <iframe src="https://www.youtube.com/embed/NLZRYQMLDW4?autoplay=1&mute=1&loop=1&playlist=NLZRYQMLDW4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <video autoplay muted loop>
+                    <source src="https://player.vimeo.com/external/334122728.sd.mp4?s=6073a7f0546479e2ef1e80f11b1ff3b8d28faeae&profile_id=164" type="video/mp4">
+                </video>
                 <p>Explore Latest News</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.airbnb.com/">
-                <iframe src="https://www.youtube.com/embed/qvH3x8jPbc4?autoplay=1&mute=1&loop=1&playlist=qvH3x8jPbc4" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <video autoplay muted loop>
+                    <source src="https://player.vimeo.com/external/324619002.sd.mp4?s=ec29d03d7dce0d5f9138b2a86ac0e03d623b8b63&profile_id=164" type="video/mp4">
+                </video>
                 <p>Explore Service Apartments</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.crunchbase.com/">
-                <iframe src="https://www.youtube.com/embed/W2OiS6vOe94?autoplay=1&mute=1&loop=1&playlist=W2OiS6vOe94" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <video autoplay muted loop>
+                    <source src="https://player.vimeo.com/external/352891783.sd.mp4?s=c45286adfd0860b1c2ed92e98284b7d042d152a4&profile_id=164" type="video/mp4">
+                </video>
                 <p>Explore Companies</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.makemytrip.com/">
-                <iframe src="https://www.youtube.com/embed/ivvGZoS4LtQ?autoplay=1&mute=1&loop=1&playlist=ivvGZoS4LtQ" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <video autoplay muted loop>
+                    <source src="https://player.vimeo.com/external/462208153.sd.mp4?s=570f5d327f7b9f81e10f91618826f77a8b2a4a63&profile_id=164" type="video/mp4">
+                </video>
                 <p>Book Bus Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bookmyshow.com/">
-                <iframe src="https://www.youtube.com/embed/YRt-QKmtaWk?autoplay=1&mute=1&loop=1&playlist=YRf-QKmtaWk" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <video autoplay muted loop>
+                    <source src="https://player.vimeo.com/external/426365504.sd.mp4?s=b3e15188cf3a3787e64e1078597bb90221f4f14b&profile_id=164" type="video/mp4">
+                </video>
                 <p>Book Movie Tickets</p>
             </a>
         </div>
