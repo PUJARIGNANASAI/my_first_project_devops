@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PGS Navigator</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -81,10 +82,10 @@
       position: fixed;
       right: 20px;
       bottom: 10px;
-      color: white; /* Changed to white */
-      font-style: normal;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: bold;
+      color: white;
+      font-family: 'Pacifico', cursive; /* Stylish font */
+      font-weight: normal;
+      font-size: 16px;
     }
 
     audio {
@@ -126,49 +127,49 @@
 
   <div class="options">
     <div class="option">
-      <a href="https://www.zomato.com/">
+      <a href="https://www.zomato.com/" target="_blank">
         <img src="https://www.equentis.com/blog/wp-content/uploads/2024/06/Story-of-The-Zomato-Storytelling-00-01.jpg" alt="Food" />
         <p>Explore Food Items</p>
       </a>
     </div>
     <div class="option">
-      <a href="https://www.theverge.com/tech">
+      <a href="https://www.theverge.com/tech" target="_blank">
         <img src="https://www.mckinsey.com/spContent/bespoke/tech-trends-2024-hero-nav/techtrends-hero-desktop.jpg" alt="Tech" />
         <p>Explore Tech</p>
       </a>
     </div>
     <div class="option">
-      <a href="https://www.bbc.com/news">
+      <a href="https://www.bbc.com/news" target="_blank">
         <img src="https://www.hindustantimes.com/ht-img/img/2024/12/18/550x309/India_6_1734523724131_1734523741441.jpg" alt="News" />
         <p>Explore Latest News</p>
       </a>
     </div>
     <div class="option">
-      <a href="https://www.airbnb.com/">
+      <a href="https://www.airbnb.com/" target="_blank">
         <img src="https://prod-attachments-public.trustedstays.co.uk/blog/JwH1OextmTbAhNRyZ9y9SWeeEuJBRkKYMdjAuDV3.w1890.jpg" alt="Apartments" />
         <p>Explore Service Apartments</p>
       </a>
     </div>
     <div class="option">
-      <a href="https://www.crunchbase.com/">
+      <a href="https://www.crunchbase.com/" target="_blank">
         <img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg" alt="Companies" />
         <p>Explore Companies</p>
       </a>
     </div>
     <div class="option">
-      <a href="https://www.makemytrip.com/">
+      <a href="https://www.makemytrip.com/" target="_blank">
         <img src="https://www.minivanhiredelhi.com/uploads/4473_state-travels-lucknow-1oebkcgrf4.jpg" alt="Bus" />
         <p>Book Bus Tickets</p>
       </a>
     </div>
     <div class="option">
-      <a href="https://www.bookmyshow.com/">
+      <a href="https://www.bookmyshow.com/" target="_blank">
         <img src="https://www.animationkolkata.com/blog/wp-content/uploads/2019/01/IMAX-home-theater.jpg" alt="Movies" />
         <p>Book Movie Tickets</p>
       </a>
     </div>
     <div class="option">
-      <a href="https://www.amazon.in/">
+      <a href="https://www.amazon.in/" target="_blank">
         <img src="https://essenceofqatar.com/wp-content/uploads/2020/07/TFS_Article_2019_970x643.jpg" alt="Shopping" />
         <p>Explore Shopping</p>
       </a>
