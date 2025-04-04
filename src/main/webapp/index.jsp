@@ -22,8 +22,8 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: -1;
             object-fit: cover;
+            z-index: -1;
         }
 
         .header {
@@ -64,11 +64,6 @@
             position: relative;
         }
 
-        .option:hover {
-            transform: scale(1.08);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
         .option img {
             width: 100%;
             height: 200px;
@@ -97,44 +92,28 @@
             display: none;
         }
 
-        /* Popup Animation */
-        @keyframes popupAnim {
+        /* Popup Animation on Hover */
+        @keyframes popUp {
             0% {
-                transform: translateX(-50%) scale(0.5);
-                opacity: 0;
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.08);
             }
             100% {
-                transform: translateX(-50%) scale(1);
-                opacity: 1;
+                transform: scale(1);
             }
         }
 
-        .option a::after {
-            content: attr(data-popup);
-            position: absolute;
-            bottom: 110%;
-            left: 50%;
-            transform: translateX(-50%) scale(0.5);
-            background-color: rgba(0, 0, 0, 0.85);
-            color: #fff;
-            padding: 8px 14px;
-            border-radius: 8px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-            font-size: 14px;
-            z-index: 10;
-        }
-
-        .option:hover a::after {
-            animation: popupAnim 0.3s ease forwards;
+        .option:hover {
+            animation: popUp 0.4s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
     <video class="bg-video" autoplay muted loop>
-        <source src="homepage.mp4" type="video/mp4">
+        <source src="homepage2.mp4" type="video/mp4">
     </video>
 
     <audio autoplay loop>
@@ -148,49 +127,49 @@
 
     <div class="options">
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.zomato.com/" data-popup="Find delicious food near you!">
+            <a href="https://www.zomato.com/">
                 <img src="https://www.equentis.com/blog/wp-content/uploads/2024/06/Story-of-The-Zomato-Storytelling-00-01.jpg" alt="Food">
                 <p>Explore Food Items</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.theverge.com/tech" data-popup="Stay updated with tech buzz!">
+            <a href="https://www.theverge.com/tech">
                 <img src="https://www.mckinsey.com/spContent/bespoke/tech-trends-2024-hero-nav/techtrends-hero-desktop.jpg" alt="Tech">
                 <p>Explore Tech</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.bbc.com/news" data-popup="Catch breaking news stories">
+            <a href="https://www.bbc.com/news">
                 <img src="https://www.hindustantimes.com/ht-img/img/2024/12/18/550x309/India_6_1734523724131_1734523741441.jpg" alt="News">
                 <p>Explore Latest News</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.airbnb.com/" data-popup="Book comfy stays easily!">
+            <a href="https://www.airbnb.com/">
                 <img src="https://prod-attachments-public.trustedstays.co.uk/blog/JwH1OextmTbAhNRyZ9y9SWeeEuJBRkKYMdjAuDV3.w1890.jpg" alt="Apartments">
                 <p>Explore Service Apartments</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.crunchbase.com/" data-popup="Discover trending startups">
+            <a href="https://www.crunchbase.com/">
                 <img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg" alt="Companies">
                 <p>Explore Companies</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.makemytrip.com/" data-popup="Plan your journey hassle-free!">
+            <a href="https://www.makemytrip.com/">
                 <img src="https://www.minivanhiredelhi.com/uploads/4473_state-travels-lucknow-1oebkcgrf4.jpg" alt="Bus">
                 <p>Book Bus Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.bookmyshow.com/" data-popup="Watch the latest blockbusters">
+            <a href="https://www.bookmyshow.com/">
                 <img src="https://www.animationkolkata.com/blog/wp-content/uploads/2019/01/IMAX-home-theater.jpg" alt="Movies">
                 <p>Book Movie Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.amazon.in/" data-popup="Shop amazing deals now">
+            <a href="https://www.amazon.in/">
                 <img src="https://essenceofqatar.com/wp-content/uploads/2020/07/TFS_Article_2019_970x643.jpg" alt="Shopping">
                 <p>Explore Shopping</p>
             </a>
