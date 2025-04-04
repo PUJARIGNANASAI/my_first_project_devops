@@ -1,129 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome to PGS Web App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGS App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
-            background: linear-gradient(to right, #f9f9f9, #e0f7fa);
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #004d40;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            color: white;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        header img {
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             text-align: center;
-            margin: 1.5rem 0;
-            animation: fadeIn 1s ease-in-out;
+            transition: background-color 0.3s, color 0.3s;
         }
-
-        .options-container {
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+        .header {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+        }
+        .toggle-btn {
+            cursor: pointer;
+            background: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .search-bar {
+            margin: 20px auto;
+            padding: 10px;
+            width: 50%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .options {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            margin: 2rem;
+            margin-top: 20px;
         }
-
-        .option-card {
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
+        .option {
             width: 250px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: slideUp 0.8s ease;
+            margin: 15px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            transition: transform 0.3s, background-color 0.3s;
         }
-
-        .option-card:hover {
+        .dark-mode .option {
+            background: #333;
+        }
+        .option:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-
-        .option-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-
-        .option-card a {
-            text-decoration: none;
-            color: #00695c;
-            display: block;
-            padding: 1rem;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: right;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #777;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #222;
+            color: white;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <img src="https://cdn-icons-png.flaticon.com/512/2936/2936881.png" alt="PGS Logo">
-    <h2>PGS Web App</h2>
-</header>
-
-<h1>Explore</h1>
-
-<div class="options-container">
-    <div class="option-card">
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Food">
-        <a href="https://www.zomato.com" target="_blank">Explore Food Items</a>
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/PNG_transparency_demonstration_1.png" alt="PGS Logo">
+        <h1>PGS App</h1>
+        <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </div>
-    <div class="option-card">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Tech">
-        <a href="https://techcrunch.com/" target="_blank">Explore Tech</a>
+    
+    <input type="text" class="search-bar" placeholder="Search options..." onkeyup="filterOptions()">
+    
+    <div class="options">
+        <div class="option animate__animated animate__fadeIn"><a href="https://www.zomato.com/">Explore Food Items</a></div>
+        <div class="option animate__animated animate__fadeIn"><a href="https://www.theverge.com/tech">Explore Tech</a></div>
+        <div class="option animate__animated animate__fadeIn"><a href="https://www.bbc.com/news">Explore Latest News</a></div>
+        <div class="option animate__animated animate__fadeIn"><a href="https://www.airbnb.com/">Explore Service Apartments</a></div>
+        <div class="option animate__animated animate__fadeIn"><a href="https://www.crunchbase.com/">Explore Companies</a></div>
+        <div class="option animate__animated animate__fadeIn"><a href="https://www.makemytrip.com/">Book Bus Tickets</a></div>
     </div>
-    <div class="option-card">
-        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312" alt="News">
-        <a href="https://news.google.com" target="_blank">Explore Latest News</a>
-    </div>
-    <div class="option-card">
-        <img src="https://images.unsplash.com/photo-1580657018956-7ba9c6e4c3da" alt="Apartments">
-        <a href="https://www.magicbricks.com" target="_blank">Explore Service Apartments</a>
-    </div>
-    <div class="option-card">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Companies">
-        <a href="https://www.linkedin.com/company/" target="_blank">Explore Companies</a>
-    </div>
-</div>
 
-<footer>
-    &copy; 2025 Created by Gnanasai Pujari
-</footer>
+    <div class="footer">
+        <p>Owner: Gnanasai Pujari</p>
+    </div>
 
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+        function filterOptions() {
+            let input = document.querySelector(".search-bar").value.toLowerCase();
+            let options = document.querySelectorAll(".option");
+            options.forEach(option => {
+                if (option.innerText.toLowerCase().includes(input)) {
+                    option.style.display = "block";
+                } else {
+                    option.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
 
