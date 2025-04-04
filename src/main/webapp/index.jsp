@@ -36,13 +36,6 @@
             padding: 10px 20px;
             border-radius: 5px;
         }
-        .search-bar {
-            margin: 20px auto;
-            padding: 10px;
-            width: 50%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
         .options {
             display: flex;
             flex-wrap: wrap;
@@ -70,6 +63,11 @@
             background: #222;
             color: white;
         }
+        .option img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -79,15 +77,42 @@
         <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </div>
     
-    <input type="text" class="search-bar" placeholder="Search options..." onkeyup="filterOptions()">
-    
     <div class="options">
-        <div class="option animate__animated animate__fadeIn"><a href="https://www.zomato.com/">Explore Food Items</a></div>
-        <div class="option animate__animated animate__fadeIn"><a href="https://www.theverge.com/tech">Explore Tech</a></div>
-        <div class="option animate__animated animate__fadeIn"><a href="https://www.bbc.com/news">Explore Latest News</a></div>
-        <div class="option animate__animated animate__fadeIn"><a href="https://www.airbnb.com/">Explore Service Apartments</a></div>
-        <div class="option animate__animated animate__fadeIn"><a href="https://www.crunchbase.com/">Explore Companies</a></div>
-        <div class="option animate__animated animate__fadeIn"><a href="https://www.makemytrip.com/">Book Bus Tickets</a></div>
+        <div class="option animate__animated animate__fadeIn">
+            <a href="https://www.zomato.com/">
+                <img src="https://source.unsplash.com/250x150/?food" alt="Explore Food Items">
+            </a>
+        </div>
+        <div class="option animate__animated animate__fadeIn">
+            <a href="https://www.theverge.com/tech">
+                <img src="https://source.unsplash.com/250x150/?technology" alt="Explore Tech">
+            </a>
+        </div>
+        <div class="option animate__animated animate__fadeIn">
+            <a href="https://www.bbc.com/news">
+                <img src="https://source.unsplash.com/250x150/?news" alt="Explore Latest News">
+            </a>
+        </div>
+        <div class="option animate__animated animate__fadeIn">
+            <a href="https://www.airbnb.com/">
+                <img src="https://source.unsplash.com/250x150/?apartment" alt="Explore Service Apartments">
+            </a>
+        </div>
+        <div class="option animate__animated animate__fadeIn">
+            <a href="https://www.crunchbase.com/">
+                <img src="https://source.unsplash.com/250x150/?company" alt="Explore Companies">
+            </a>
+        </div>
+        <div class="option animate__animated animate__fadeIn">
+            <a href="https://www.makemytrip.com/">
+                <img src="https://source.unsplash.com/250x150/?bus" alt="Book Bus Tickets">
+            </a>
+        </div>
+        <div class="option animate__animated animate__fadeIn">
+            <a href="https://www.bookmyshow.com/">
+                <img src="https://source.unsplash.com/250x150/?movie" alt="Book Movie Tickets">
+            </a>
+        </div>
     </div>
 
     <div class="footer">
@@ -97,17 +122,6 @@
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
-        }
-        function filterOptions() {
-            let input = document.querySelector(".search-bar").value.toLowerCase();
-            let options = document.querySelectorAll(".option");
-            options.forEach(option => {
-                if (option.innerText.toLowerCase().includes(input)) {
-                    option.style.display = "block";
-                } else {
-                    option.style.display = "none";
-                }
-            });
         }
     </script>
 </body>
