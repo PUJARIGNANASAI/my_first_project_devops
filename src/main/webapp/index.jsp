@@ -9,25 +9,29 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
+            background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
             color: #333;
             text-align: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .dark-mode {
             background-color: #222;
             color: white;
         }
         .header {
-            background: linear-gradient(to right, #0072ff, #00c6ff);
+            background: black;
             padding: 20px;
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .header img {
-            width: 50px;
-            height: 50px;
+            width: 130px;
+            height: 130px;
         }
         .toggle-btn {
             cursor: pointer;
@@ -41,38 +45,44 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 30px;
+            margin-top: 40px;
+            gap: 30px;
         }
         .option {
-            width: 250px;
-            margin: 15px;
+            width: 260px;
             padding: 15px;
             background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-radius: 20px;
             transition: transform 0.3s ease;
         }
         .dark-mode .option {
             background: #444;
         }
         .option:hover {
-            transform: scale(1.07);
+            transform: scale(1.08);
         }
         .option img {
             width: 100%;
-            height: 150px;
+            height: 160px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 12px;
         }
         .option p {
-            margin-top: 10px;
+            margin-top: 12px;
             font-weight: bold;
+            font-size: 16px;
         }
         .footer {
-            margin-top: 30px;
-            padding: 15px;
-            background: #333;
+            position: fixed;
+            right: 20px;
+            bottom: 10px;
             color: white;
+            font-style: italic;
+            background: transparent;
+        }
+        .footer p {
+            font-style: italic;
         }
     </style>
 </head>
@@ -86,43 +96,43 @@
     <div class="options">
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.zomato.com/">
-                <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Explore Food Items">
+                <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Explore Food Items">
                 <p>Explore Food Items</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.theverge.com/tech">
-                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Explore Tech">
+                <img src="https://media.giphy.com/media/dsKnRuALlWsZG/giphy.gif" alt="Explore Tech">
                 <p>Explore Tech</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bbc.com/news">
-                <img src="https://cdn-icons-png.flaticon.com/512/610/610118.png" alt="Explore Latest News">
+                <img src="https://media.giphy.com/media/h3cEWrS0W1zvG/giphy.gif" alt="Explore Latest News">
                 <p>Explore Latest News</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.airbnb.com/">
-                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Explore Service Apartments">
+                <img src="https://media.giphy.com/media/RJW6nRzRL35vbTt0zG/giphy.gif" alt="Explore Service Apartments">
                 <p>Explore Service Apartments</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.crunchbase.com/">
-                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Explore Companies">
+                <img src="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" alt="Explore Companies">
                 <p>Explore Companies</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.makemytrip.com/">
-                <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Book Bus Tickets">
+                <img src="https://media.giphy.com/media/xT9Igs90EPzE0RZZZq/giphy.gif" alt="Book Bus Tickets">
                 <p>Book Bus Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bookmyshow.com/">
-                <img src="https://cdn-icons-png.flaticon.com/512/3094/3094881.png" alt="Book Movie Tickets">
+                <img src="https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif" alt="Book Movie Tickets">
                 <p>Book Movie Tickets</p>
             </a>
         </div>
@@ -139,4 +149,3 @@
     </script>
 </body>
 </html>
-
