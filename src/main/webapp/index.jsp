@@ -104,25 +104,25 @@
     <div class="options">
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.zomato.com/">
-                <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/breakfast-2290161_1280.jpg" alt="Food">
+                <img src="https://www.equentis.com/blog/wp-content/uploads/2024/06/Story-of-The-Zomato-Storytelling-00-01.jpg" alt="Food">
                 <p>Explore Food Items</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.theverge.com/tech">
-                <img src="https://cdn.pixabay.com/photo/2017/06/13/22/42/laptop-2408371_1280.jpg" alt="Tech">
+                <img src="https://www.mckinsey.com/spContent/bespoke/tech-trends-2024-hero-nav/techtrends-hero-desktop.jpg" alt="Tech">
                 <p>Explore Tech</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bbc.com/news">
-                <img src="https://cdn.pixabay.com/photo/2016/11/29/05/08/abstract-1868720_1280.jpg" alt="News">
+                <img src="https://www.hindustantimes.com/ht-img/img/2024/12/18/550x309/India_6_1734523724131_1734523741441.jpg" alt="News">
                 <p>Explore Latest News</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.airbnb.com/">
-                <img src="https://cdn.pixabay.com/photo/2017/08/06/11/22/living-room-2593570_1280.jpg" alt="Apartments">
+                <img src="https://prod-attachments-public.trustedstays.co.uk/blog/JwH1OextmTbAhNRyZ9y9SWeeEuJBRkKYMdjAuDV3.w1890.jpg" alt="Apartments">
                 <p>Explore Service Apartments</p>
             </a>
         </div>
@@ -133,20 +133,20 @@
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
-            <a href="https://www.redbus.in/">
-                <img src="https://cdn.pixabay.com/photo/2016/02/16/20/40/bus-1208205_1280.jpg" alt="Bus">
+            <a href="https://www.makemytrip.com/">
+                <img src="https://www.minivanhiredelhi.com/uploads/4473_state-travels-lucknow-1oebkcgrf4.jpg" alt="Bus">
                 <p>Book Bus Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.bookmyshow.com/">
-                <img src="https://cdn.pixabay.com/photo/2016/11/22/23/51/cinema-1851090_1280.jpg" alt="Movies">
+                <img src="https://www.animationkolkata.com/blog/wp-content/uploads/2019/01/IMAX-home-theater.jpg" alt="Movies">
                 <p>Book Movie Tickets</p>
             </a>
         </div>
         <div class="option animate__animated animate__fadeInUp">
             <a href="https://www.amazon.in/">
-                <img src="https://cdn.pixabay.com/photo/2017/08/07/00/53/shopping-2594687_1280.jpg" alt="Shopping">
+                <img src="https://essenceofqatar.com/wp-content/uploads/2020/07/TFS_Article_2019_970x643.jpg" alt="Shopping">
                 <p>Explore Shopping</p>
             </a>
         </div>
