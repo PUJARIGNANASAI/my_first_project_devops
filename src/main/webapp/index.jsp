@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PGS App</title>
+    <title>PGS Navigator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
+            color: #333;
             text-align: center;
-            transition: background-color 0.3s, color 0.3s;
         }
         .dark-mode {
             background-color: #222;
             color: white;
         }
         .header {
-            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            background: linear-gradient(to right, #0072ff, #00c6ff);
             padding: 20px;
             color: white;
             display: flex;
@@ -32,6 +32,7 @@
         .toggle-btn {
             cursor: pointer;
             background: white;
+            color: #0072ff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -40,77 +41,78 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
         .option {
             width: 250px;
             margin: 15px;
-            padding: 20px;
+            padding: 15px;
             background: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            border-radius: 10px;
-            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
         }
         .dark-mode .option {
-            background: #333;
+            background: #444;
         }
         .option:hover {
-            transform: scale(1.05);
+            transform: scale(1.07);
         }
         .footer {
-            margin-top: 20px;
-            padding: 10px;
-            background: #222;
+            margin-top: 30px;
+            padding: 15px;
+            background: #333;
             color: white;
         }
         .option img {
             width: 100%;
-            height: auto;
+            height: 150px;
+            object-fit: cover;
             border-radius: 10px;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/PNG_transparency_demonstration_1.png" alt="PGS Logo">
+        <img src="pgslogo.png" alt="PGS Logo">
         <h1>PGS App</h1>
         <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
     </div>
     
     <div class="options">
-        <div class="option animate__animated animate__fadeIn">
+        <div class="option animate__animated animate__pulse">
             <a href="https://www.zomato.com/">
-                <img src="https://source.unsplash.com/250x150/?food" alt="Explore Food Items">
+                <img src="https://media.giphy.com/media/f9k1tV7HyORcngKF8v/giphy.gif" alt="Explore Food Items">
             </a>
         </div>
-        <div class="option animate__animated animate__fadeIn">
+        <div class="option animate__animated animate__pulse">
             <a href="https://www.theverge.com/tech">
-                <img src="https://source.unsplash.com/250x150/?technology" alt="Explore Tech">
+                <img src="https://media.giphy.com/media/XI3NTy1I0U5LO/giphy.gif" alt="Explore Tech">
             </a>
         </div>
-        <div class="option animate__animated animate__fadeIn">
+        <div class="option animate__animated animate__pulse">
             <a href="https://www.bbc.com/news">
-                <img src="https://source.unsplash.com/250x150/?news" alt="Explore Latest News">
+                <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Explore Latest News">
             </a>
         </div>
-        <div class="option animate__animated animate__fadeIn">
+        <div class="option animate__animated animate__pulse">
             <a href="https://www.airbnb.com/">
-                <img src="https://source.unsplash.com/250x150/?apartment" alt="Explore Service Apartments">
+                <img src="https://media.giphy.com/media/26Ff6BS9EjhBv2d1u/giphy.gif" alt="Explore Service Apartments">
             </a>
         </div>
-        <div class="option animate__animated animate__fadeIn">
+        <div class="option animate__animated animate__pulse">
             <a href="https://www.crunchbase.com/">
-                <img src="https://source.unsplash.com/250x150/?company" alt="Explore Companies">
+                <img src="https://media.giphy.com/media/3o7btNRTQDw8PNCz2s/giphy.gif" alt="Explore Companies">
             </a>
         </div>
-        <div class="option animate__animated animate__fadeIn">
+        <div class="option animate__animated animate__pulse">
             <a href="https://www.makemytrip.com/">
-                <img src="https://source.unsplash.com/250x150/?bus" alt="Book Bus Tickets">
+                <img src="https://media.giphy.com/media/xT0GqcV5M9O3LJnT7q/giphy.gif" alt="Book Bus Tickets">
             </a>
         </div>
-        <div class="option animate__animated animate__fadeIn">
+        <div class="option animate__animated animate__pulse">
             <a href="https://www.bookmyshow.com/">
-                <img src="https://source.unsplash.com/250x150/?movie" alt="Book Movie Tickets">
+                <img src="https://media.giphy.com/media/l4FGwHEUCGILzM6BO/giphy.gif" alt="Book Movie Tickets">
             </a>
         </div>
     </div>
