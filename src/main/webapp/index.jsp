@@ -46,6 +46,64 @@
       margin: 0;
     }
 
+    /* Left corner options */
+    .options-left {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+    }
+
+    #backgroundOptionButton {
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #backgroundOptionButton:hover {
+      background-color: #555;
+    }
+
+    /* Right corner mute button */
+    .controls {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+
+    #muteButton {
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #muteButton:hover {
+      background-color: #555;
+    }
+
+    .footer {
+      position: fixed;
+      right: 20px;
+      bottom: 10px;
+      color: white;
+      font-family: 'Pacifico', cursive;
+      font-weight: normal;
+      font-size: 16px;
+    }
+
+    audio {
+      display: none;
+    }
+
     .options {
       display: flex;
       flex-wrap: wrap;
@@ -78,76 +136,50 @@
       color: #000;
     }
 
-    .footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(0,0,0,0.6);
-      color: white;
-      font-family: 'Pacifico', cursive;
-      font-size: 14px;
-      padding: 8px 0;
-    }
-
-    audio {
-      display: none;
-    }
-
+    /* Pop animation only on hover */
     @keyframes popUp {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.08);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
 
     .option:hover {
       animation: popUp 0.4s ease;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
-
-    #muteToggle, #bgSelector {
-      position: fixed;
-      z-index: 2;
-      right: 20px;
-      padding: 10px;
-      border-radius: 8px;
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    #muteToggle {
-      top: 20px;
-    }
-
-    #bgSelector {
-      top: 70px;
-      color: black;
-    }
   </style>
 </head>
 <body>
   <video class="bg-video" autoplay muted loop>
-    <source src="https://www.videvo.net/videvo_files/converted/2014_08/preview/Clouds_Timelapse1Videvo.mov81595.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
+    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
   </video>
 
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg" />
   </audio>
 
-  <button id="muteToggle">🔊 Mute</button>
-
-  <select id="bgSelector">
-    <option value="nature">Nature</option>
-    <option value="city">City</option>
-    <option value="tech">Tech</option>
-  </select>
-
   <div class="header">
     <img src="pgslogo.png" alt="PGS Logo" />
     <h1>PGS Navigator</h1>
+  </div>
+
+  <div class="options-left">
+    <button id="backgroundOptionButton">Background Options</button>
+    <div id="backgroundOptionsMenu" style="display:none; background-color: rgba(0,0,0,0.7); padding: 10px; color: white; border-radius: 5px;">
+      <button onclick="changeBackground('video1')">Video 1</button>
+      <button onclick="changeBackground('video2')">Video 2</button>
+      <button onclick="changeBackground('video3')">Video 3</button>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="muteButton">Mute</button>
   </div>
 
   <div class="options">
@@ -202,36 +234,49 @@
   </div>
 
   <div class="footer">
-    <p>Owner: Gnanasai Pujari | Email: pujarignanasai@gmail.com | Contact: +91-8500293902</p>
-    <p>&copy; 2025 PGS Navigator. All rights reserved.</p>
+    <p>Owner: Gnanasai Pujari</p>
+    <p>Contact: <a href="mailto:pujarignansai@gmail.com"> +91- 8500293902</a></p>
+    <p>&copy; 2025 PGS Navigator. All Rights Reserved.</p>
   </div>
 
   <script>
-    const audio = document.querySelector("audio");
-    const muteBtn = document.getElementById("muteToggle");
-    const bgVideo = document.querySelector(".bg-video");
-    const videoSource = bgVideo.querySelector("source");
-    const bgSelector = document.getElementById("bgSelector");
+    const audio = document.querySelector('audio');
+    const muteButton = document.getElementById('muteButton');
+    const backgroundOptionButton = document.getElementById('backgroundOptionButton');
+    const backgroundOptionsMenu = document.getElementById('backgroundOptionsMenu');
 
-    // Mute/Unmute Toggle
-    muteBtn.addEventListener("click", () => {
-      audio.muted = !audio.muted;
-      muteBtn.textContent = audio.muted ? "🔇 Unmute" : "🔊 Mute";
+    // Toggle mute functionality
+    muteButton.addEventListener('click', () => {
+      if (audio.muted) {
+        audio.muted = false;
+        audio.volume = 1;  // Set to full volume
+        muteButton.textContent = "Mute";
+      } else {
+        audio.muted = true;
+        muteButton.textContent = "Unmute";
+      }
     });
 
-    // Change Background Video
-    const videoURLs = {
-      nature: "https://www.videvo.net/videvo_files/converted/2014_08/preview/Clouds_Timelapse1Videvo.mov81595.mp4",
-      city: "https://cdn.videvo.net/videvo_files/video/premium/video0030/small_watermarked/03_Manhattan_Night_Skyline_preview.webm",
-      tech: "https://cdn.videvo.net/videvo_files/video/premium/video0014/small_watermarked/Technology_Network_02_preview.webm"
-    };
-
-    bgSelector.addEventListener("change", (e) => {
-      const selected = e.target.value;
-      videoSource.src = videoURLs[selected];
-      bgVideo.load();
-      bgVideo.play();
+    // Show/Hide Background Options
+    backgroundOptionButton.addEventListener('click', () => {
+      backgroundOptionsMenu.style.display = backgroundOptionsMenu.style.display === 'block' ? 'none' : 'block';
     });
+
+    // Change background video
+    function changeBackground(videoType) {
+      const bgVideo = document.querySelector('.bg-video source');
+      if (videoType === 'nature') {
+        bgVideo.src = 'https://videos.pexels.com/video-files/2098989/2098989-uhd_2560_1440_30fps.mp4';
+      } else if (videoType === 'city') {
+        bgVideo.src = 'https://videos.pexels.com/video-files/1826896/1826896-hd_1920_1080_24fps.mp4';  // Change to actual video URL
+      } else if (videoType === 'tech') {
+        bgVideo.src = 'https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4';  // Change to actual video URL
+      }
+      else if (videoType === 'beach') {
+        bgVideo.src = 'https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4"';  // Change to actual video URL
+      }
+      document.querySelector('.bg-video').load(); // Reload video
+    }
   </script>
 </body>
 </html>
