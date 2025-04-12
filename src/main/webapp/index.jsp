@@ -71,12 +71,12 @@
     /* Right corner mute button */
     .controls {
       position: fixed;
-      bottom: 20px;
+      top: 20px;
       right: 20px;
       z-index: 10;
     }
 
-    #muteButton, #backgroundOptionButton {
+    #muteButton {
       font-size: 16px;
       background-color: #333;
       color: white;
@@ -84,21 +84,38 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin: 5px;
     }
 
-    #muteButton:hover, #backgroundOptionButton:hover {
+    #muteButton:hover {
       background-color: #555;
     }
 
+    /* Footer */
     .footer {
       position: fixed;
       right: 20px;
-      bottom: 70px; /* Adjust footer height */
+      bottom: 20px;
       color: white;
-      font-family: 'Pacifico', cursive;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-weight: normal;
-      font-size: 12px; /* Reduced font size */
+      font-size: 14px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    .footer a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
     }
 
     audio {
@@ -173,9 +190,9 @@
   <div class="options-left">
     <button id="backgroundOptionButton">Background Options</button>
     <div id="backgroundOptionsMenu" style="display:none; background-color: rgba(0,0,0,0.7); padding: 10px; color: white; border-radius: 5px;">
-      <button onclick="changeBackground('video1')">Video 1</button>
-      <button onclick="changeBackground('video2')">Video 2</button>
-      <button onclick="changeBackground('video3')">Video 3</button>
+      <button onclick="changeBackground('nature')">Nature</button>
+      <button onclick="changeBackground('city')">City</button>
+      <button onclick="changeBackground('tech')">Tech</button>
     </div>
   </div>
 
@@ -196,47 +213,12 @@
         <p>Explore Tech</p>
       </a>
     </div>
-    <div class="option">
-      <a href="https://www.bbc.com/news" target="_blank">
-        <img src="https://www.hindustantimes.com/ht-img/img/2024/12/18/550x309/India_6_1734523724131_1734523741441.jpg" alt="News" />
-        <p>Explore Latest News</p>
-      </a>
-    </div>
-    <div class="option">
-      <a href="https://www.airbnb.com/" target="_blank">
-        <img src="https://prod-attachments-public.trustedstays.co.uk/blog/JwH1OextmTbAhNRyZ9y9SWeeEuJBRkKYMdjAuDV3.w1890.jpg" alt="Apartments" />
-        <p>Explore Service Apartments</p>
-      </a>
-    </div>
-    <div class="option">
-      <a href="https://www.crunchbase.com/" target="_blank">
-        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg" alt="Companies" />
-        <p>Explore Companies</p>
-      </a>
-    </div>
-    <div class="option">
-      <a href="https://www.makemytrip.com/" target="_blank">
-        <img src="https://www.minivanhiredelhi.com/uploads/4473_state-travels-lucknow-1oebkcgrf4.jpg" alt="Bus" />
-        <p>Book Bus Tickets</p>
-      </a>
-    </div>
-    <div class="option">
-      <a href="https://www.bookmyshow.com/" target="_blank">
-        <img src="https://www.animationkolkata.com/blog/wp-content/uploads/2019/01/IMAX-home-theater.jpg" alt="Movies" />
-        <p>Book Movie Tickets</p>
-      </a>
-    </div>
-    <div class="option">
-      <a href="https://www.amazon.in/" target="_blank">
-        <img src="https://essenceofqatar.com/wp-content/uploads/2020/07/TFS_Article_2019_970x643.jpg" alt="Shopping" />
-        <p>Explore Shopping</p>
-      </a>
-    </div>
+    <!-- More options go here -->
   </div>
 
   <div class="footer">
     <p>Owner: Gnanasai Pujari</p>
-    <p>Contact: <a href="mailto:pujarignansai@gmail.com"> +91- 8500293902</a></p>
+    <p>Contact: <a href="mailto:pujarignansai@gmail.com">pujarignansai@gmail.com</a></p>
     <p>&copy; 2025 PGS Navigator. All Rights Reserved.</p>
   </div>
 
@@ -269,9 +251,9 @@
       if (videoType === 'nature') {
         bgVideo.src = 'https://videos.pexels.com/video-files/2098989/2098989-uhd_2560_1440_30fps.mp4';
       } else if (videoType === 'city') {
-        bgVideo.src = 'https://videos.pexels.com/video-files/1826896/1826896-hd_1920_1080_24fps.mp4';  
+        bgVideo.src = 'https://videos.pexels.com/video-files/1826896/1826896-hd_1920_1080_24fps.mp4';
       } else if (videoType === 'tech') {
-        bgVideo.src = 'https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4';  
+        bgVideo.src = 'https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4';
       }
       document.querySelector('.bg-video').load(); // Reload video
     }
