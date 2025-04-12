@@ -71,12 +71,12 @@
     /* Right corner mute button */
     .controls {
       position: fixed;
-      top: 20px;
+      bottom: 20px;
       right: 20px;
       z-index: 10;
     }
 
-    #muteButton {
+    #muteButton, #backgroundOptionButton {
       font-size: 16px;
       background-color: #333;
       color: white;
@@ -84,20 +84,21 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin: 5px;
     }
 
-    #muteButton:hover {
+    #muteButton:hover, #backgroundOptionButton:hover {
       background-color: #555;
     }
 
     .footer {
       position: fixed;
       right: 20px;
-      bottom: 10px;
+      bottom: 70px; /* Adjust footer height */
       color: white;
       font-family: 'Pacifico', cursive;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 12px; /* Reduced font size */
     }
 
     audio {
@@ -268,12 +269,9 @@
       if (videoType === 'nature') {
         bgVideo.src = 'https://videos.pexels.com/video-files/2098989/2098989-uhd_2560_1440_30fps.mp4';
       } else if (videoType === 'city') {
-        bgVideo.src = 'https://videos.pexels.com/video-files/1826896/1826896-hd_1920_1080_24fps.mp4';  // Change to actual video URL
+        bgVideo.src = 'https://videos.pexels.com/video-files/1826896/1826896-hd_1920_1080_24fps.mp4';  
       } else if (videoType === 'tech') {
-        bgVideo.src = 'https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4';  // Change to actual video URL
-      }
-      else if (videoType === 'beach') {
-        bgVideo.src = 'https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4"';  // Change to actual video URL
+        bgVideo.src = 'https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4';  
       }
       document.querySelector('.bg-video').load(); // Reload video
     }
