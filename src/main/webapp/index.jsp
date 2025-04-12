@@ -3,260 +3,193 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PGS Navigator</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <title>Interactive Dashboard</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
-      text-align: center;
+    body, html {
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
     }
 
     video.bg-video {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
       object-fit: cover;
       z-index: -1;
     }
 
-    .header {
-      background: black;
-      padding: 10px 20px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .header img {
-      width: 50px;
-      height: auto;
-    }
-
-    .header h1 {
-      font-size: 18px;
-      margin: 0;
-    }
-
-    /* Left corner options */
-    .options-left {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-    }
-
-    #backgroundOptionButton {
-      font-size: 16px;
-      background-color: #333;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #backgroundOptionButton:hover {
-      background-color: #555;
-    }
-
-    /* Right corner mute button */
-    .controls {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-    }
-
-    #muteButton {
-      font-size: 16px;
-      background-color: #333;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #muteButton:hover {
-      background-color: #555;
-    }
-
-    /* Footer */
-    .footer {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: normal;
-      font-size: 14px;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 20px;
-      border-radius: 5px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .footer p {
-      margin: 5px 0;
-    }
-
-    .footer a {
-      color: #00bcd4;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    audio {
-      display: none;
-    }
-
     .options {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 40px;
-      gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 1rem;
+      position: relative;
+      z-index: 2;
     }
 
-    .option {
-      width: 300px;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      transition: box-shadow 0.3s ease;
+    .option a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease;
+    }
+
+    .option a:hover {
+      transform: scale(1.05);
     }
 
     .option img {
       width: 100%;
-      height: 200px;
+      height: 140px;
       object-fit: cover;
-      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
     .option p {
-      margin: 10px 0;
+      text-align: center;
       font-weight: bold;
-      font-size: 18px;
-      color: #000;
+      margin-top: 0.5rem;
+      color: white;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
     }
 
-    /* Pop animation only on hover */
-    @keyframes popUp {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.08);
-      }
-      100% {
-        transform: scale(1);
-      }
+    .controls {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 10;
+      background: rgba(0,0,0,0.4);
+      padding: 10px;
+      border-radius: 10px;
     }
 
-    .option:hover {
-      animation: popUp 0.4s ease;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    .controls button {
+      padding: 5px 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .controls select {
+      padding: 5px;
+      font-size: 14px;
+      border-radius: 5px;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <video class="bg-video" autoplay muted loop>
-    <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+
+  <!-- Background video -->
+  <video class="bg-video" id="bgVideo" autoplay muted loop>
+    <source src="https://videos.pexels.com/video-files/2098989/2098989-uhd_2560_1440_30fps.mp4" type="video/mp4" />
   </video>
 
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg" />
+  <!-- Background audio -->
+  <audio id="bgAudio" loop autoplay>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3" />
   </audio>
 
-  <div class="header">
-    <img src="pgslogo.png" alt="PGS Logo" />
-    <h1>PGS Navigator</h1>
-  </div>
-
-  <div class="options-left">
-    <button id="backgroundOptionButton">Background Options</button>
-    <div id="backgroundOptionsMenu" style="display:none; background-color: rgba(0,0,0,0.7); padding: 10px; color: white; border-radius: 5px;">
-      <button onclick="changeBackground('nature')">Nature</button>
-      <button onclick="changeBackground('city')">City</button>
-      <button onclick="changeBackground('tech')">Tech</button>
-    </div>
-  </div>
-
+  <!-- Controls bottom-left -->
   <div class="controls">
-    <button id="muteButton">Mute</button>
+    <select id="bgSelect">
+      <option value="nature">Nature</option>
+      <option value="city">City</option>
+      <option value="tech">Tech</option>
+      <option value="beach">Beach</option>
+    </select>
+    <button id="audioToggle">Mute</button>
   </div>
 
+  <!-- Main content grid -->
   <div class="options">
     <div class="option">
-      <a href="https://www.zomato.com/" target="_blank">
+      <a href="https://www.zomato.com/" target="_blank" aria-label="Explore Food Items on Zomato">
         <img src="https://www.equentis.com/blog/wp-content/uploads/2024/06/Story-of-The-Zomato-Storytelling-00-01.jpg" alt="Food" />
         <p>Explore Food Items</p>
       </a>
     </div>
     <div class="option">
-      <a href="https://www.theverge.com/tech" target="_blank">
+      <a href="https://www.theverge.com/tech" target="_blank" aria-label="Explore Tech News on The Verge">
         <img src="https://www.mckinsey.com/spContent/bespoke/tech-trends-2024-hero-nav/techtrends-hero-desktop.jpg" alt="Tech" />
         <p>Explore Tech</p>
       </a>
     </div>
-    <!-- More options go here -->
+    <div class="option">
+      <a href="https://www.bbc.com/news" target="_blank" aria-label="Explore Latest News on BBC">
+        <img src="https://www.hindustantimes.com/ht-img/img/2024/12/18/550x309/India_6_1734523724131_1734523741441.jpg" alt="News" />
+        <p>Explore Latest News</p>
+      </a>
+    </div>
+    <div class="option">
+      <a href="https://www.airbnb.com/" target="_blank" aria-label="Explore Service Apartments on Airbnb">
+        <img src="https://prod-attachments-public.trustedstays.co.uk/blog/JwH1OextmTbAhNRyZ9y9SWeeEuJBRkKYMdjAuDV3.w1890.jpg" alt="Apartments" />
+        <p>Explore Service Apartments</p>
+      </a>
+    </div>
+    <div class="option">
+      <a href="https://www.crunchbase.com/" target="_blank" aria-label="Explore Companies on Crunchbase">
+        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg" alt="Companies" />
+        <p>Explore Companies</p>
+      </a>
+    </div>
+    <div class="option">
+      <a href="https://www.makemytrip.com/" target="_blank" aria-label="Book Bus Tickets on MakeMyTrip">
+        <img src="https://www.minivanhiredelhi.com/uploads/4473_state-travels-lucknow-1oebkcgrf4.jpg" alt="Bus" />
+        <p>Book Bus Tickets</p>
+      </a>
+    </div>
+    <div class="option">
+      <a href="https://www.bookmyshow.com/" target="_blank" aria-label="Book Movie Tickets on BookMyShow">
+        <img src="https://www.animationkolkata.com/blog/wp-content/uploads/2019/01/IMAX-home-theater.jpg" alt="Movies" />
+        <p>Book Movie Tickets</p>
+      </a>
+    </div>
+    <div class="option">
+      <a href="https://www.amazon.in/" target="_blank" aria-label="Explore Shopping on Amazon India">
+        <img src="https://essenceofqatar.com/wp-content/uploads/2020/07/TFS_Article_2019_970x643.jpg" alt="Shopping" />
+        <p>Explore Shopping</p>
+      </a>
+    </div>
   </div>
 
-  <div class="footer">
-    <p>Owner: Gnanasai Pujari</p>
-    <p>Contact: <a href="mailto:pujarignansai@gmail.com">pujarignansai@gmail.com</a></p>
-    <p>&copy; 2025 PGS Navigator. All Rights Reserved.</p>
-  </div>
-
+  <!-- JS for video and audio control -->
   <script>
-    const audio = document.querySelector('audio');
-    const muteButton = document.getElementById('muteButton');
-    const backgroundOptionButton = document.getElementById('backgroundOptionButton');
-    const backgroundOptionsMenu = document.getElementById('backgroundOptionsMenu');
+    const bgVideo = document.getElementById("bgVideo");
+    const bgAudio = document.getElementById("bgAudio");
+    const audioToggle = document.getElementById("audioToggle");
+    const bgSelect = document.getElementById("bgSelect");
 
-    // Toggle mute functionality
-    muteButton.addEventListener('click', () => {
-      if (audio.muted) {
-        audio.muted = false;
-        audio.volume = 1;  // Set to full volume
-        muteButton.textContent = "Mute";
-      } else {
-        audio.muted = true;
-        muteButton.textContent = "Unmute";
-      }
+    const videoSources = {
+      nature: "https://videos.pexels.com/video-files/2098989/2098989-uhd_2560_1440_30fps.mp4",
+      city: "https://videos.pexels.com/video-files/1826896/1826896-hd_1920_1080_24fps.mp4",
+      tech: "https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4",
+      beach: "https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4"
+    };
+
+    bgSelect.addEventListener("change", () => {
+      const selected = bgSelect.value;
+      bgVideo.src = videoSources[selected];
+      bgVideo.load();
+      bgVideo.play();
     });
 
-    // Show/Hide Background Options
-    backgroundOptionButton.addEventListener('click', () => {
-      backgroundOptionsMenu.style.display = backgroundOptionsMenu.style.display === 'block' ? 'none' : 'block';
+    audioToggle.addEventListener("click", () => {
+      bgAudio.muted = !bgAudio.muted;
+      audioToggle.textContent = bgAudio.muted ? "Unmute" : "Mute";
     });
-
-    // Change background video
-    function changeBackground(videoType) {
-      const bgVideo = document.querySelector('.bg-video source');
-      if (videoType === 'nature') {
-        bgVideo.src = 'https://videos.pexels.com/video-files/2098989/2098989-uhd_2560_1440_30fps.mp4';
-      } else if (videoType === 'city') {
-        bgVideo.src = 'https://videos.pexels.com/video-files/1826896/1826896-hd_1920_1080_24fps.mp4';
-      } else if (videoType === 'tech') {
-        bgVideo.src = 'https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4';
-      }
-      document.querySelector('.bg-video').load(); // Reload video
-    }
   </script>
+
 </body>
 </html>
