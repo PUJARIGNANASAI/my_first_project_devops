@@ -80,45 +80,70 @@
 
     .footer {
       position: fixed;
-      right: 20px;
-      bottom: 10px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0,0,0,0.6);
       color: white;
-      font-family: 'Pacifico', cursive; /* Stylish font */
-      font-weight: normal;
-      font-size: 16px;
+      font-family: 'Pacifico', cursive;
+      font-size: 14px;
+      padding: 8px 0;
     }
 
     audio {
       display: none;
     }
 
-    /* Pop animation only on hover */
     @keyframes popUp {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.08);
-      }
-      100% {
-        transform: scale(1);
-      }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
 
     .option:hover {
       animation: popUp 0.4s ease;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
+
+    #muteToggle, #bgSelector {
+      position: fixed;
+      z-index: 2;
+      right: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #muteToggle {
+      top: 20px;
+    }
+
+    #bgSelector {
+      top: 70px;
+      color: black;
+    }
   </style>
 </head>
 <body>
   <video class="bg-video" autoplay muted loop>
-    <source src="homepage2.mp4" type="video/mp4" />
+    <source src="https://www.videvo.net/videvo_files/converted/2014_08/preview/Clouds_Timelapse1Videvo.mov81595.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
   </video>
 
   <audio autoplay loop>
     <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg" />
   </audio>
+
+  <button id="muteToggle">🔊 Mute</button>
+
+  <select id="bgSelector">
+    <option value="nature">Nature</option>
+    <option value="city">City</option>
+    <option value="tech">Tech</option>
+  </select>
 
   <div class="header">
     <img src="pgslogo.png" alt="PGS Logo" />
@@ -177,7 +202,36 @@
   </div>
 
   <div class="footer">
-    <p>Owner: Gnanasai Pujari</p>
+    <p>Owner: Gnanasai Pujari | Email: pujarignanasai@gmail.com | Contact: +91-8500293902</p>
+    <p>&copy; 2025 PGS Navigator. All rights reserved.</p>
   </div>
+
+  <script>
+    const audio = document.querySelector("audio");
+    const muteBtn = document.getElementById("muteToggle");
+    const bgVideo = document.querySelector(".bg-video");
+    const videoSource = bgVideo.querySelector("source");
+    const bgSelector = document.getElementById("bgSelector");
+
+    // Mute/Unmute Toggle
+    muteBtn.addEventListener("click", () => {
+      audio.muted = !audio.muted;
+      muteBtn.textContent = audio.muted ? "🔇 Unmute" : "🔊 Mute";
+    });
+
+    // Change Background Video
+    const videoURLs = {
+      nature: "https://www.videvo.net/videvo_files/converted/2014_08/preview/Clouds_Timelapse1Videvo.mov81595.mp4",
+      city: "https://cdn.videvo.net/videvo_files/video/premium/video0030/small_watermarked/03_Manhattan_Night_Skyline_preview.webm",
+      tech: "https://cdn.videvo.net/videvo_files/video/premium/video0014/small_watermarked/Technology_Network_02_preview.webm"
+    };
+
+    bgSelector.addEventListener("change", (e) => {
+      const selected = e.target.value;
+      videoSource.src = videoURLs[selected];
+      bgVideo.load();
+      bgVideo.play();
+    });
+  </script>
 </body>
 </html>
